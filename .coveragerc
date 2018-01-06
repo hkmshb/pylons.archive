@@ -1,0 +1,3 @@
+[run]
+source = pylons
+omit = pylons/test*

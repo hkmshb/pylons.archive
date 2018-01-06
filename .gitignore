@@ -3,6 +3,8 @@ __pycache__/
 build/
 dist/
 .tox/
+.tmp/
+env/
 *~
 
 *.sqlite
