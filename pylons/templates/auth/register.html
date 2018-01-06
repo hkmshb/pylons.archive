@@ -1,0 +1,32 @@
+{% extends "site/base.html" %}
+{% import "macros/form.html" as form %}
+
+{% block content %}
+  <div class="col-md-5 pr-0 pull-right">
+    {{ form.errors(errors, "error") }}
+
+    <form id="form-registration" method="post">
+      <h1 class="form-heading">Register for an Account</h1>
+
+      {% set attrs={"is_required": True, "show_asterix": False} %}
+      {{ form.input("first_name", label=_("First Name"), id="field-first-name", type="text", value=data.first_name,
+                    error=errors.first_name, placeholder=_("Enter First Name"), classes=["form-control form-control-sm"],
+                    **attrs) }}
+
+      {{ form.input("last_name", label=_("Last Name"), id="field-last-name", type="text", value=data.last_name,
+                    error=errors.last_name, placeholder=_("Enter Last Name"), classes=["form-control form-control-sm"],
+                    **attrs) }}
+
+      {{ form.input("email", label=_("User Email"), id="field-email", type="email", value=data.email, error=errors.email,
+                    placeholder=_("Enter Email"), classes=["form-control form-control-sm"], **attrs) }}
+
+      {{ form.input("password", label=_("Password"), id="field-password", type="password", value=data.password,
+                    error=errors.password, placeholder=_("Enter Password"), classes=["form-control form-control-sm"], **attrs) }}
+
+      {{ form.input("password2", label=_("Confirm"), id="field-password2", type="password", value=data.password2 ,
+                    error=errors.password2, placeholder=_("Confirm Password"), classes=["form-control form-control-sm"], **attrs) }}
+
+      <button type="submit" class="btn btn-light btn-sm btn-block">Create Account</button>
+    </form>
+  </div>
+{% endblock %}

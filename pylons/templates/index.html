@@ -1,17 +1,8 @@
-<!doctype html>
-<html>
-<head>
-  <title>Pylons</title>
-  <link rel="stylesheet" href="{{ 'elixr2.web:static/css/vendors.css'|static_url }}">
-</head>
-<body>
-  <div class="row">
-    <div class="container mt-5">
-      <h1>Welcome to Pylons!</h1>
-      <p>
-        The Electric Utility Information Management System.
-      </p>
-    </div>
-  </div>
-</body>
-</html>
+{% extends 'site/base.html' %}
+
+{% block content %}
+  <h1>Welcome to Pylons!</h1>
+  <p>
+    The Electric Utility Information Management System.
+  </p>
+{% endblock %}
