@@ -1,0 +1,33 @@
+# build output
+__pycache__/
+build/
+dist/
+.tox/
+*~
+
+*.sqlite
+*$py.class
+*.py[co]
+*.egg-info
+*.egg
+
+# Test & Coverage
+coverage
+test
+
+nosetests.xml
+coverage.xml
+.coverage
+
+# IDE files
+.vscode
+.cache
+
+# OS files
+Data.fs*
+.DS_Store
+
+
+# Others
+.venv
+.env
