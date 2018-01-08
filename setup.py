@@ -13,10 +13,13 @@ devices and equipment, powerlines and assets within an Electric utility network.
 '''
 
 requires = [
+    'cornice',
     'elixr2',
     'plaster_pastedeploy',
     'pyramid >= 1.9.1',
     'pyramid_jinja2',
+    'pyramid_jwt',
+    'pyramid_multiauth',
     'pyramid_retry',
     'pyramid_tm',
     'SQLAlchemy',
