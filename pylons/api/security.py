@@ -1,6 +1,6 @@
 from zope.interface import implementer
 from pyramid.security import ALL_PERMISSIONS, Allow, Authenticated, Deny, Everyone
-from elixr2.web.core.interfaces import IACLResource
+from elixr2.web.interfaces import IACLResource
 
 import logging
 log = logging.getLogger(__name__)
