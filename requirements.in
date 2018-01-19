@@ -1,0 +1,11 @@
+# The file contains the direct pylons requirements
+# use pip-compile to create a requirements.txt file from this
+elixr2==0.1
+cornice==3.0.0
+pyramid>=1.9.1
+pyramid-jinja2==2.7
+pyramid-jwt==1.2
+pyramid-multiauth==0.9
+rainbow-logging-handler==2.2.2
+waitress==1.1.0
+zope.sqlalchemy==0.7.7
