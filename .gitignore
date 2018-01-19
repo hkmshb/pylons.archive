@@ -12,6 +12,10 @@ env/
 *.py[co]
 *.egg-info
 *.egg
+*.log
+
+vagrantfile
+.vagrant
 
 # Test & Coverage
 coverage
@@ -28,7 +32,6 @@ coverage.xml
 # OS files
 Data.fs*
 .DS_Store
-
 
 # Others
 .venv
