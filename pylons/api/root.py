@@ -24,25 +24,28 @@ class JWTAuthorizeResource(object):
         data, errors = login_schema.load(json_data)
         if errors:
             log.debug('jwt login schema error: %s' % errors)
-            return {'result': 'error: Invalid username and/or password'}
+            return {'result': 'error', 'data': 'Invalid login credentials provided'}
 
-        username = json_data['email']
+        # chose to use the generic field name `identity` for the API auth, thus this
+        # can contain anything from email to username. ILoginService implementation
+        # dictates the exact value to be provided...
+        identity = json_data['identity']
         password = json_data['password']
         try:
             lservice = reg.queryAdapter(self.request, ILoginService, name='api')
-            user = lservice.login(username, password)
+            user = lservice.login(identity, password)
 
             # TODO: extend jwt token with extra claims
             return {
                 'result': 'ok',
-                'token': self.request.create_jwt_token(
+                'data': self.request.create_jwt_token(
                     str(user.uuid),
                     roles = resolve_principals(user)
                 )
             }
         except AuthenticationError as ex:
             log.debug('jwt login error: %s' % str(ex))
-            return {'result': 'error: Invalid username and/or password'}
+            return {'result': 'error', 'data': 'Invalid username and/or password'}
 
 
 @resource(name='api_root', path='/', factory=RESTApiACL, permission='authenticated')
