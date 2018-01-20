@@ -14,7 +14,7 @@ devices and equipment, powerlines and assets within an Electric utility network.
 
 requires = [
     'cornice',
-    'elixr2',
+    'elixr2[utils]',
     'plaster_pastedeploy',
     'pyramid >= 1.9.1',
     'pyramid_jinja2',

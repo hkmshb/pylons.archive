@@ -1,6 +1,6 @@
 # The file contains the direct pylons requirements
 # use pip-compile to create a requirements.txt file from this
-elixr2==0.1
+elixr2[utils]==0.2
 cornice==3.0.0
 pyramid>=1.9.1
 pyramid-jinja2==2.7
